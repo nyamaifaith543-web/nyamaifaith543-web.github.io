@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>JavaScript Functions Example</title>
+  <style>
+    body {
+      font-family: Arial;
+      margin: 20px;
+      background-color: red;
+    }
+    h1 {
+      text-align: center;
+      color: darkblue;
+    }
+    .box {
+      border: 1px;
+      padding: 15px;
+      margin: 15px 0;
+      border-radius: 8px;
+      background: white;
+    }
+    button {
+      padding: 8px 12px;
+      margin-top: 10px;
+      background: darkblue;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    button:hover {
+      background: navy;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>JavaScript Functions Demo</h1>
+  <div class="box">
+    <h2>1. Normal Function</h2>
+    <p id="normal">Click the button to call a normal function.</p>
+    <button onclick="sayHello()">Say Hello</button>
+  </div>
+  <div class="box">
+    <h2>2. Function with Parameters</h2>
+    <p id="addResult">Result will appear here.</p>
+    <button onclick="showSum(5, 7)">Add 5 + 7</button>
+  </div>
+  <div class="box">
+    <h2>3. Function Returning a Value</h2>
+    <p id="squareResult">Click to calculate 6².</p>
+    <button onclick="showSquare(6)">Find Square</button>
+  </div>
+  <div class="box">
+    <h2>4. Function Expression</h2>
+    <p id="multiplyResult">Click to multiply 4 × 5.</p>
+    <button onclick="showMultiply()">Multiply</button>
+  </div>
+  <div class="box">
+    <h2>5. Arrow Function</h2>
+    <p id="divideResult">Click to divide 20 ÷ 4.</p>
+    <button onclick="showDivide()">Divide</button>
+  </div>
+
+  <script>
+    // 1. Normal Function
+    function sayHello() {
+      document.getElementById("normal").innerHTML = "Hello from a normal function!";
+    }
+
+    // 2. Function with Parameters
+    function showSum(a, b) {
+      document.getElementById("addResult").innerHTML = "Sum = " + (a + b);
+    }
+
+    // 3. Function with Return Value
+    function square(num) {
+      return num * num;
+    }
+    function showSquare(n) {
+      document.getElementById("squareResult").innerHTML = n + "² = " + square(n);
+    }
+
+    // 4. Function Expression
+    const multiply = function(x, y) {
+      return x * y;
+    };
+    function showMultiply() {
+      document.getElementById("multiplyResult").innerHTML = "4 × 5 = " + multiply(4, 5);
+    }
+
+    // 5. Arrow Function
+    const divide = (a, b) => a / b;
+    function showDivide() {
+      document.getElementById("divideResult").innerHTML = "20 ÷ 4 = " + divide(20, 4);
+    }
+  </script>
+
+</body>
+</html>
